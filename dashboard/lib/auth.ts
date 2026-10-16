@@ -1,16 +1,7 @@
+
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
- * ║                                                                  ║
- * ║   ░█▀▀░█▀█░█▀▄░█▀▀░█░█   ░█▀▄░█▀▀░█░█░█▀▀                     ║
- * ║   ░█░░░█░█░█░█░█▀▀░▄▀▄   ░█░█░█▀▀░▀▄▀░▀▀█                     ║
- * ║   ░▀▀▀░▀▀▀░▀▀░░▀▀▀░▀░▀   ░▀▀░░▀▀▀░░▀░░▀▀▀                     ║
- * ║                                                                  ║
- * ║           © 2026 CodeX Devs — All Rights Reserved               ║
- * ║                                                                  ║
- * ║   discord  ──  https://discord.gg/codexdev                      ║
- * ║   youtube  ──  https://youtube.com/@CodeXDevs                   ║
- * ║   github   ──  https://github.com/RayExo                        ║
- * ║                                                                  ║
+ * ║   © 2026 CodeX Devs — All Rights Reserved                       ║
  * ╚══════════════════════════════════════════════════════════════════╝
  */
 
@@ -22,7 +13,10 @@ export const authOptions: AuthOptions = {
     DiscordProvider({
       clientId: process.env.DISCORD_CLIENT_ID || "",
       clientSecret: process.env.DISCORD_CLIENT_SECRET || "",
-      authorization: { params: { scope: "identify guilds" } },
+      issuer: "https://discord.com",
+      authorization: {
+        params: { scope: "identify guilds" },
+      },
     }),
   ],
   callbacks: {
