@@ -67,9 +67,7 @@ export default function DashboardLayout({
   }, [pathname]);
 
   React.useEffect(() => {
-    if (status === "unauthenticated") {
-      signIn("discord");
-    }
+    
     
     // Fetch global notification
     const fetchNotification = async () => {
